@@ -3,6 +3,12 @@
 		*配置提交人姓名git config --global user.name
 		*配置提交人邮件git config --global user.email
 		*查看配置信息  git config --list
+		*将下次弹框的用户名和密码存储起来，永久使用 git config --global credential.helper store
+		*将存储的密码和用户名清除	git config --global credential.helper reset
+		*临时存储账号密码15分钟(linux)	git config --global credential.helper cache
+		*临时存储账号密码15分钟（windows）	git config --global credential.helper wincred
+		*在https链接中加入用户名和密码	https://username:pwd@address
+
 	git 基本使用
 		*git init 初始化项目
 		*git status 查看目录下的文件状态
