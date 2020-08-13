@@ -9,6 +9,7 @@
 		*临时存储账号密码15分钟（windows）	git config --global credential.helper wincred
 		*在https链接中加入用户名和密码	https://username:pwd@address
 
+
 	git 基本使用
 		*git init 初始化项目
 		*git status 查看目录下的文件状态
