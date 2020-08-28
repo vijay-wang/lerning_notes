@@ -3,6 +3,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+struct Node;
+typedef struct Node* List;
+
 struct Stu
 {
 	int score;
@@ -17,30 +20,12 @@ struct	Node
 };
 
 //创建头结点
-struct Node* create(void)
-{
-	struct Node* phead=(struct Node*)malloc(sizeof(struct Node));
-	phead->next=nullptr;
-	return phead;
-}
+struct Node* create(void);
 
 //返回true表示链表不为空，返回0表示链表为空
-bool isEmpty(struct Node* phead)
-{
-	if(phead->next)
-		return true;
-	return false;
-}
+int IsEmpty(struct Node* phead);
 
 //添加新节点
-bool add(struct Node* phead)
-{
-	struct Node* p,* ptemp;
-	p=(struct Node*)malloc(sizeof(struct Node));
-	p->next=nullptr;
-	//ptemp=phead->next;
-	while(phead->next)	phead=phead->next;
-	phead->next=p;
+int add(struct Node* phead);
 
-}
-#endif
+#end
