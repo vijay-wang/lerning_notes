@@ -5,6 +5,7 @@
 
 struct Node;
 typedef struct Node* List;
+typedef struct Node* Position;
 
 struct Stu
 {
@@ -28,4 +29,13 @@ int IsEmpty(struct Node* phead);
 //添加新节点
 int add(struct Node* phead);
 
+//return true if P is the last position
+int
+IsLast(Position);
+
+//find the first element x
+Position
+Find(int x,List L);
 #end
+
+// 
