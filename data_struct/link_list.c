@@ -22,3 +22,17 @@ int add(List phead)
 	phead->next=p;
 
 }
+
+int
+IsLast(Position p)
+{
+	return p->next==NULL;
+}
+
+Position
+Find(int X,List L)
+{
+	while(L->next && L->next->data->stu_num == X)
+		return L->next;
+}
+
