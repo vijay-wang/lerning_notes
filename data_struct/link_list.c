@@ -1,21 +1,21 @@
 #include "link_list.h"
 
-struct Node* create(void)
+List create(void)
 {
-	struct Node* phead=(struct Node*)malloc(sizeof(struct Node));
+	List phead=(List)malloc(sizeof(struct Node));
 	phead->next=nullptr;
 	return phead;
 }
 
-int IsEmpty(struct Node* phead)
+int IsEmpty(List phead)
 {
 	return phead->next==NULL;
 }
 
-int add(struct Node* phead)
+int add(List phead)
 {
-	struct Node* p,* ptemp;
-	p=(struct Node*)malloc(sizeof(struct Node));
+	List p,ptemp;
+	p=(List)malloc(sizeof(struct Node));
 	p->next=nullptr;
 	//ptemp=phead->next;
 	while(phead->next)	phead=phead->next;

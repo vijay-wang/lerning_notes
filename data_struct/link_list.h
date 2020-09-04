@@ -20,12 +20,12 @@ struct	Node
 };
 
 //创建头结点
-struct Node* create(void);
+List create(void);
 
 //返回true表示链表不为空，返回0表示链表为空
-int IsEmpty(struct Node* phead);
+int IsEmpty(List phead);
 
 //添加新节点
-int add(struct Node* phead);
+int add(List phead);
 
 #end
