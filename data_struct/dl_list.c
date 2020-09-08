@@ -4,16 +4,16 @@
 #include<time.h>
 #define nullptr (void*)0 
 
-struct Node* DbList;
-struct DbList Position;
+typedef struct Node* DbList;
+typedef DbList Position;
 
 struct Node
 {
 	DbList prior;
 	int data;
 	DbList next;
-}
-=====================================================================
+};
+//=====================================================================
 DbList
 InitDbList(void);
 
@@ -21,11 +21,14 @@ void
 DeleteList(DbList L);
 
 Position
-Add(DbList L);
+Add(int X,DbList L);
 
 void
 PrintList(DbList L);
-======================================================================
+
+void
+PrintListPre(DbList L);
+//======================================================================
 DbList
 InitDbList(void)
 {
@@ -48,10 +51,13 @@ DeleteList(DbList L)
 }
 
 Position
-Add(DbList L)
+Add(int X,DbList L)
 {
-	DbList P;
+	Position P;
 	P = malloc(sizeof(struct Node));
+	P -> data = X;
+	P -> next =nullptr;
+	while(L -> next) L = L -> next;
 	L -> next = P;
 	P -> prior = L;
 	return P;
@@ -60,18 +66,37 @@ Add(DbList L)
 void
 PrintList(DbList L)
 {
-	while(L -> next)
+	int count=0;
+	DbList temp = L -> next;
+	while(temp)
 	{
-		printf("第%d个元素",L -> next -> data);
-		L -> next = L-> next -> next;
-	}
-}
-=======================================================================
+		printf("第%d个元素:%d\n",count++,temp -> data);
+		temp = temp -> next;
+	}	
+};
+
+void
+PrintListPre(DbList L)
+{
+	int count=100;
+	DbList temp = L -> next;
+	while(temp)
+	{
+		printf("第%d个元素:%d\n",count--,temp -> data);
+		temp = temp -> next;
+	}	
+};
+//=======================================================================
 int main()
 {
-	DlList P = InitDbList();
+	DbList P = InitDbList();
 	int i=100;
 	while(i--)
-		
+		Add(rand()%100+1,P);
+	PrintList(P);
+	
+	PrintListPre(P);
+
+	DeleteList(P);
 	return 0;
 }
