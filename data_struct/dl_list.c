@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
@@ -75,19 +76,8 @@ PrintList(DbList L)
 	}	
 };
 
-void
-PrintListPre(DbList L)
-{
-	int count=100;
-	DbList temp = L -> next;
-	while(temp)
-	{
-		printf("第%d个元素:%d\n",count--,temp -> data);
-		temp = temp -> next;
-	}	
-};
 //=======================================================================
-int main()
+int main(void)
 {
 	DbList P = InitDbList();
 	int i=100;
@@ -95,8 +85,9 @@ int main()
 		Add(rand()%100+1,P);
 	PrintList(P);
 	
-	PrintListPre(P);
+	PrintList(P);
 
 	DeleteList(P);
 	return 0;
 }
+
