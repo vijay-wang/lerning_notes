@@ -1,0 +1,12 @@
+OBJS=main.o tool1.o tool2.o
+CC=gcc				#指定编译器名称
+FLAGS+=-Wall -c -o		#指定编译参数
+
+mytool:$(OBJS)			#$(OBJS)取OBJS变量的值
+	$(CC) $^ -o $@		#$^表示上一行的依赖项	$@表示上一行的目标项 
+
+%.o:%.c
+	$(CC) $^ $(FLAGS) $@	#%表示通配符
+
+clean:
+	rm *o mytool		#make clean 清除所有.o文件
