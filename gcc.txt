@@ -51,7 +51,7 @@ gcc常用参数：
 	4、动态库的制作和使用
 		命名规则：libxxx.so
 		制作步骤：
-			将源文件汇编成.o文件：gcc -c a.c b.c -fpic(fPIC)
+			将源文件汇编成.o文件：gcc -c a.c b.c -fpic(fPIC)  fPIC 的全称是 Position Independent Code， 用于生成位置无关代码
 			将.o文件打包：gcc -shared -o libxxx.so a.o b.o(二进制文件和动态库名顺序可兑换）
 		动态库的使用：
 			gcc -I./include -L./lib -ltest -o app
